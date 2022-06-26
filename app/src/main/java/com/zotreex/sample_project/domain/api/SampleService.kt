@@ -1,14 +1,14 @@
 package com.zotreex.sample_project.domain.api
 
-import com.zotreex.sample_project.domain.data.SampleItem
+import com.zotreex.sample_project.domain.data.Product
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface SampleService {
     //todo ОБЕРНУТЬ в НЕКИЙ ApiResult с перехватом try catch
-    @GET("sampleDir")
-    suspend fun getSampleList(): List<SampleItem>
+    @GET("products")
+    suspend fun getProductsList(): List<Product>
 
-    @GET("sampleDir/{id}")
-    suspend fun getSampleItem(@Query("id") id: Int): SampleItem
+    @GET("products/{id}")
+    suspend fun getProductItem(@Query("id") id: Int): Product
 }

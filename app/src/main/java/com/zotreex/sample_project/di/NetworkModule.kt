@@ -13,7 +13,7 @@ class NetworkModule {
     fun provideSampleApi(): SampleService {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://www.sampleapi.com/")
+            .baseUrl("https://fakestoreapi.com/")
             .build()
         return retrofit.create()
     }

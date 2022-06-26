@@ -1,21 +1,19 @@
 package com.zotreex.sample_project.ui.adapters
 
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.zotreex.sample_project.databinding.SampleItemBinding
-import com.zotreex.sample_project.domain.data.SampleItem
+import com.zotreex.sample_project.domain.data.Product
 
 class SampleListAdapter() :
-    ListAdapter<SampleItem, SampleListAdapter.ViewHolder>(SampleDiffCallBack()) {
+    ListAdapter<Product, SampleListAdapter.ViewHolder>(SampleDiffCallBack()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val sampleItem: SampleItem = currentList[position]
-        holder.bind(sampleItem)
+        val product: Product = currentList[position]
+        holder.bind(product)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,18 +23,18 @@ class SampleListAdapter() :
 
     class ViewHolder(private val binding: SampleItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: SampleItem) {
+        fun bind(item: Product) {
             binding.text.text = item.title
         }
     }
 
 }
 
-class SampleDiffCallBack : DiffUtil.ItemCallback<SampleItem>() {
-    override fun areItemsTheSame(oldItem: SampleItem, newItem: SampleItem): Boolean =
+class SampleDiffCallBack : DiffUtil.ItemCallback<Product>() {
+    override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean =
         oldItem == newItem
 
-    override fun areContentsTheSame(oldItem: SampleItem, newItem: SampleItem): Boolean =
+    override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean =
         oldItem == newItem
 
 }
