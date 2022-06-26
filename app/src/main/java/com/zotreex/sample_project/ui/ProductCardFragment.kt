@@ -5,23 +5,21 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.squareup.picasso.Picasso
 import com.zotreex.sample_project.R
-import com.zotreex.sample_project.databinding.FragmentSampleBinding
+import com.zotreex.sample_project.databinding.ActivityProductItemBinding
 import com.zotreex.sample_project.di.ViewModelFactory
 import com.zotreex.sample_project.di.appComponent
 import com.zotreex.sample_project.domain.data.UiState
-import com.zotreex.sample_project.ui.adapters.ProductsListAdapter
 import javax.inject.Inject
 
-class SampleFragment : Fragment(R.layout.fragment_sample) {
+class ProductCardFragment : Fragment(R.layout.activity_product_item) {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
     private val viewModel by viewModels<ProductViewModel> { viewModelFactory }
-    private val binding: FragmentSampleBinding by viewBinding()
-    private val adapter = ProductsListAdapter()
+    private val binding: ActivityProductItemBinding by viewBinding()
 
     override fun onAttach(context: Context) {
         context.appComponent.inject(this)
@@ -31,8 +29,10 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.sampleAdapter.adapter = adapter
-        binding.sampleAdapter.layoutManager = GridLayoutManager(context, 2)
+        val productId = arguments?.getInt("id")
+        if (productId != null) {
+            viewModel.getProduct(productId)
+        }
 
         viewModel.liveData.observe(viewLifecycleOwner) {
             it ?: return@observe
@@ -41,13 +41,14 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
             else
                 binding.progress.visibility = View.GONE
 
-            if(it is UiState.Success)
-                adapter.submitList(it.value)
-
-        }
-
-        binding.button.setOnClickListener {
-            viewModel.setLive()
+            if(it is UiState.Success) {
+                print("success!")
+                val product = it.value
+                binding.title.text = product.title
+                binding.desc.text = product.description
+                binding.price.text = product.price.toString() + "$"
+                Picasso.get().load(product.image).into(binding.cardImg)
+            }
         }
     }
 

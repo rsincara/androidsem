@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/sampleFragment"
-        android:name="com.zotreex.sample_project.ui.SampleFragment"
+        android:name="com.zotreex.sample_project.ui.ProductListFragment"
         android:label="SampleFragment" />
 </navigation>
