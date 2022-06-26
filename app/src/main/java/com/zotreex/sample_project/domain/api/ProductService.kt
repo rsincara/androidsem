@@ -4,7 +4,7 @@ import com.zotreex.sample_project.domain.data.Product
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface SampleService {
+interface ProductService {
     //todo ОБЕРНУТЬ в НЕКИЙ ApiResult с перехватом try catch
     @GET("products")
     suspend fun getProductsList(): List<Product>

@@ -2,7 +2,7 @@ package com.zotreex.sample_project.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.zotreex.sample_project.ui.SampleViewModel
+import com.zotreex.sample_project.ui.ProductViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -15,6 +15,6 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(SampleViewModel::class)
-    abstract fun sampleViewModel(sampleViewModel: SampleViewModel): ViewModel
+    @ViewModelKey(ProductViewModel::class)
+    abstract fun sampleViewModel(productViewModel: ProductViewModel): ViewModel
 }

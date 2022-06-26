@@ -1,6 +1,6 @@
 package com.zotreex.sample_project.di
 
-import com.zotreex.sample_project.domain.api.SampleService
+import com.zotreex.sample_project.domain.api.ProductService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -10,7 +10,7 @@ import retrofit2.create
 @Module
 class NetworkModule {
     @Provides
-    fun provideSampleApi(): SampleService {
+    fun provideSampleApi(): ProductService {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("https://fakestoreapi.com/")

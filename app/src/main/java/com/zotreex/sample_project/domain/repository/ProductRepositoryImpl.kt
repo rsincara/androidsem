@@ -1,13 +1,13 @@
 package com.zotreex.sample_project.domain.repository
 
-import com.zotreex.sample_project.domain.api.SampleService
+import com.zotreex.sample_project.domain.api.ProductService
 import com.zotreex.sample_project.domain.data.Product
 import javax.inject.Inject
 
 class ProductRepositoryImpl @Inject constructor(
-    private val sampleService: SampleService
+    private val productService: ProductService
 ) : ProductRepository {
-    override suspend fun getProductsList(): List<Product> = sampleService.getProductsList()
+    override suspend fun getProductsList(): List<Product> = productService.getProductsList()
 
-    override suspend fun getProductItem(id: Int): Product = sampleService.getProductItem(id)
+    override suspend fun getProductItem(id: Int): Product = productService.getProductItem(id)
 }

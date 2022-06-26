@@ -9,7 +9,7 @@ import com.zotreex.sample_project.domain.usecases.getProductsList.GetProductsLis
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SampleViewModel @Inject constructor(
+class ProductViewModel @Inject constructor(
     private val getProductsListUseCase: GetProductsListUseCase
 ) : ViewModel() {
     val liveData = MutableLiveData<UiState<List<Product>>>(UiState.Loading)

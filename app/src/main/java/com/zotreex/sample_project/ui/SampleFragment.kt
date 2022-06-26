@@ -5,22 +5,23 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.zotreex.sample_project.R
 import com.zotreex.sample_project.databinding.FragmentSampleBinding
 import com.zotreex.sample_project.di.ViewModelFactory
 import com.zotreex.sample_project.di.appComponent
 import com.zotreex.sample_project.domain.data.UiState
-import com.zotreex.sample_project.ui.adapters.SampleListAdapter
+import com.zotreex.sample_project.ui.adapters.ProductsListAdapter
 import javax.inject.Inject
 
 class SampleFragment : Fragment(R.layout.fragment_sample) {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-    private val viewModel by viewModels<SampleViewModel> { viewModelFactory }
+    private val viewModel by viewModels<ProductViewModel> { viewModelFactory }
     private val binding: FragmentSampleBinding by viewBinding()
-    private val adapter = SampleListAdapter()
+    private val adapter = ProductsListAdapter()
 
     override fun onAttach(context: Context) {
         context.appComponent.inject(this)
@@ -31,6 +32,7 @@ class SampleFragment : Fragment(R.layout.fragment_sample) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.sampleAdapter.adapter = adapter
+        binding.sampleAdapter.layoutManager = GridLayoutManager(context, 2)
 
         viewModel.liveData.observe(viewLifecycleOwner) {
             it ?: return@observe

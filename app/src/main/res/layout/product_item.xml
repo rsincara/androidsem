@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:layout_width="155dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_height="276dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="5dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/card_img"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.9"
+                android:layout_height="150dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="7dp"
+                />
+
+            <TextView
+                android:id="@+id/card_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:paddingTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+                app:layout_constraintStart_toStartOf="@id/card_img"
+                app:layout_constraintTop_toBottomOf="@id/card_img"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_price"
+                app:layout_constraintStart_toStartOf="@id/card_title"
+                app:layout_constraintTop_toBottomOf="@id/card_title"
+                android:textAlignment="center"
+                android:text="@string/price_template"
+                tools:text="price"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="30dp"
+                android:id="@+id/card_desc"
+                app:layout_constraintStart_toStartOf="@id/card_price"
+                app:layout_constraintTop_toBottomOf="@id/card_price"
+                android:textAlignment="center"
+                android:ellipsize="end"
+                android:maxLines="3"
+                tools:text="Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket."
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
