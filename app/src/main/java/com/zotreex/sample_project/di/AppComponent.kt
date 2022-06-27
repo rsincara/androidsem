@@ -2,6 +2,7 @@ package com.zotreex.sample_project.di
 
 import com.zotreex.sample_project.ui.ProductCardFragment
 import com.zotreex.sample_project.ui.ProductListFragment
+import com.zotreex.sample_project.ui.SettingsFragment
 import dagger.Component
 import dagger.Module
 
@@ -9,6 +10,7 @@ import dagger.Module
 interface AppComponent {
     fun inject(fragment: ProductListFragment)
     fun inject(fragment: ProductCardFragment)
+    fun inject(fragment: SettingsFragment)
 
     fun viewModelFactory() : ViewModelFactory
 }

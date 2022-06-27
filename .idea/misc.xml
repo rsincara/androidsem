@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.2155" />
         <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/layout/activity_main.xml" value="0.171875" />
         <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/layout/activity_product_item.xml" value="0.33" />
         <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/layout/fragment_first.xml" value="0.30027173913043476" />
@@ -11,7 +12,9 @@
         <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/layout/fragment_second.xml" value="0.30027173913043476" />
         <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/layout/product_item.xml" value="0.5" />
         <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/layout/sample_item.xml" value="0.32472826086956524" />
+        <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/layout/settings_fragment.xml" value="0.33" />
         <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/menu/bottom_menu.xml" value="0.2140625" />
+        <entry key="..\:/Users/rsinc/Desktop/android sem/blank_project-UI/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sample/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2075" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sample/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sample/app/src/main/res/layout/fragment_sample.xml" value="0.33177083333333335" />

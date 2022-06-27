@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/productListFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Catalog" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings_applications_24"
+        android:title="Setting" />
+</menu>
