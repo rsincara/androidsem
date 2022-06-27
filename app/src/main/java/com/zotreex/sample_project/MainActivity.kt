@@ -1,13 +1,12 @@
 package com.zotreex.sample_project
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.zotreex.sample_project.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.zotreex.sample_project.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -25,6 +24,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             navController.navigate(it.itemId)
             return@setOnItemSelectedListener true
         }
+
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+            print("Not found actionbar")
+        }
+
 
     }
 }

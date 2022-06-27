@@ -15,12 +15,29 @@
 
         <TextView
             android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_height="wrap_content"
             android:id="@+id/settings_title"
             android:textAlignment="center"
             android:text="@string/settings"
             android:textSize="30sp"
             />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/theme_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_baseline_brightness_2_24"
+            app:strokeWidth="1dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/settings_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/change_theme"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/beige"
+    android:background="?attr/colorOnPrimary"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,6 +16,7 @@
 
         <ImageView
             android:id="@+id/card_img"
+            android:textColor="?attr/colorOnSecondary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:minHeight="300dp"
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/desc"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="@id/title"
