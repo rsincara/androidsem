@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/productListFragment">
+    app:startDestination="@id/connectionFragment">
 
     <fragment
         android:id="@+id/productListFragment"
@@ -52,4 +52,12 @@
         android:id="@+id/webViewFragment"
         android:name="com.zotreex.sample_project.ui.WebViewFragment"
         android:label="WebViewFragment" />
+    <fragment
+        android:id="@+id/connectionFragment"
+        android:name="com.zotreex.sample_project.ui.ConnectionFragment"
+        android:label="ConnectionFragment" >
+        <action
+            android:id="@+id/action_connectionFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
 </navigation>

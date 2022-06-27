@@ -9,4 +9,5 @@
     <string name="enter_text">Enter text</string>
     <string name="category">category:</string>
     <string name="developer_profile">Developer profile</string>
+    <string name="no_internet_access">No internet access :( \n\n Get access and restart the application</string>
 </resources>

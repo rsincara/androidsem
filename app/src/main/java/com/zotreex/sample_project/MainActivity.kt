@@ -1,12 +1,13 @@
 package com.zotreex.sample_project
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.zotreex.sample_project.databinding.ActivityMainBinding
+import com.zotreex.sample_project.services.Connection
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -15,7 +16,14 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
+        val isOnline = Connection.isOnline(this)
+
+        val bottomNavigationView = viewBinding.navView
+
+        if (!isOnline) {
+            bottomNavigationView.visibility = View.GONE
+        }
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
         bottomNavigationView.setupWithNavController(navController)
@@ -30,7 +38,5 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         } catch (e: NullPointerException) {
             print("Not found actionbar")
         }
-
-
     }
 }
