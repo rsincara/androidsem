@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.zotreex.sample_project.R
 import com.zotreex.sample_project.databinding.SettingsFragmentBinding
@@ -57,6 +59,11 @@ class SettingsFragment : Fragment(R.layout.settings_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.themeButton.setOnClickListener { chooseThemeDialog() }
-    }
 
+        binding.vkProfile.setOnClickListener {
+            Navigation.findNavController(it).navigate(
+                R.id.webViewFragment
+            )
+        }
+    }
 }
