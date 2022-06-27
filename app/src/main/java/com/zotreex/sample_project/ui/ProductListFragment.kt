@@ -34,16 +34,27 @@ class ProductListFragment : Fragment(R.layout.fragment_products_list) {
         binding.sampleAdapter.adapter = adapter
         binding.sampleAdapter.layoutManager = GridLayoutManager(context, 2)
 
-        viewModel.liveData.observe(viewLifecycleOwner) {
-            it ?: return@observe
-            if (it is UiState.Loading)
-                binding.progress.visibility = View.VISIBLE
-            else
-                binding.progress.visibility = View.GONE
+        val searchText = arguments?.getString("search")
+        if (searchText != null) {
+            val productsList = viewModel.search(searchText.lowercase())
+            adapter.submitList(productsList)
+            binding.progress.visibility = View.GONE
 
-            if(it is UiState.Success)
-                adapter.submitList(it.value)
+            if (productsList.count() == 0) {
+                binding.notFound.visibility = View.VISIBLE
+                binding.notFound.text = "Nothing found for your search: " + searchText
+            }
+        } else {
+            viewModel.liveData.observe(viewLifecycleOwner) {
+                it ?: return@observe
+                if (it is UiState.Loading)
+                    binding.progress.visibility = View.VISIBLE
+                else
+                    binding.progress.visibility = View.GONE
+
+                if(it is UiState.Success)
+                    adapter.submitList(it.value)
+            }
         }
     }
-
 }
