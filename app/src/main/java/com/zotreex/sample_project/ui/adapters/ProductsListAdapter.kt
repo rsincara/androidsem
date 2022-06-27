@@ -1,6 +1,5 @@
 package com.zotreex.sample_project.ui.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -53,6 +52,5 @@ class SampleDiffCallBack : DiffUtil.ItemCallback<Product>() {
 
     override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean =
         oldItem == newItem
-
 }
 

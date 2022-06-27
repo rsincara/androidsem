@@ -2,7 +2,6 @@ package com.zotreex.sample_project.services
 
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 
 class Connection {
     companion object {

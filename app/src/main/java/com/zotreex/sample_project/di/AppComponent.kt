@@ -9,9 +9,6 @@ interface AppComponent {
     fun inject(fragment: ProductListFragment)
     fun inject(fragment: ProductCardFragment)
     fun inject(fragment: SettingsFragment)
-    fun inject(fragment: SearchFragment)
-    fun inject(fragment: WebViewFragment)
-    fun inject(fragment: ConnectionFragment)
 
     fun viewModelFactory() : ViewModelFactory
 }

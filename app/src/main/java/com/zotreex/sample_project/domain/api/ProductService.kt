@@ -5,7 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ProductService {
-    //todo ОБЕРНУТЬ в НЕКИЙ ApiResult с перехватом try catch
     @GET("products")
     suspend fun getProductsList(): List<Product>
 

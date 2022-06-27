@@ -23,5 +23,4 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ProductViewModel::class)
     abstract fun productViewModel(productViewModel: ProductViewModel): ViewModel
-
 }

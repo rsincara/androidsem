@@ -5,17 +5,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.zotreex.sample_project.R
 import com.zotreex.sample_project.databinding.SettingsFragmentBinding
-import com.zotreex.sample_project.di.ViewModelFactory
 import com.zotreex.sample_project.di.appComponent
 import com.zotreex.sample_project.state.Theme
-import javax.inject.Inject
 
 class SettingsFragment : Fragment(R.layout.settings_fragment) {
     lateinit var thisContext: Context
@@ -29,7 +25,6 @@ class SettingsFragment : Fragment(R.layout.settings_fragment) {
     }
 
     private fun chooseThemeDialog() {
-
         val builder = AlertDialog.Builder(thisContext)
         builder.setTitle("Choose theme")
         val styles = arrayOf("Light","Dark")
