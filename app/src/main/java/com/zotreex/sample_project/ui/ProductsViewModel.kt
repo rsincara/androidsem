@@ -17,17 +17,27 @@ class ProductsViewModel @Inject constructor(
 
     fun search(text: String): List<Product> {
         val productsList = Products.products
-        return productsList.filter {
-            it.description.lowercase().contains(text) ||
-                    it.title.lowercase().contains(text)
+
+        if (productsList != null) {
+            return productsList.filter {
+                it.description.lowercase().contains(text) ||
+                        it.title.lowercase().contains(text)
+            }
+        } else {
+            return listOf()
         }
     }
 
     init {
         viewModelScope.launch {
-            val list = getProductsListUseCase()
-            Products.products = list
-            liveData.postValue(UiState.Success(list))
+            val isCacheListEmpty = Products.products == null
+            if (isCacheListEmpty) {
+                val list = getProductsListUseCase()
+                Products.products = list
+                liveData.postValue(UiState.Success(list))
+            } else {
+                liveData.postValue(UiState.Success(Products.products ?: listOf()))
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ import com.zotreex.sample_project.domain.data.Product
 
 class Products {
     companion object {
-        lateinit var products: List<Product>
+        var products: List<Product>? = null
         lateinit var currentProduct: Product
     }
 }
