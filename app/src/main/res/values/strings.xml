@@ -7,4 +7,5 @@
     <string name="catalog">Catalog</string>
     <string name="find_products">Find products</string>
     <string name="enter_text">Enter text</string>
+    <string name="category">category:</string>
 </resources>

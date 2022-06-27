@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso
 import com.zotreex.sample_project.R
 import com.zotreex.sample_project.databinding.ProductItemBinding
 import com.zotreex.sample_project.domain.data.Product
+import com.zotreex.sample_project.state.Products
 
 class ProductsListAdapter() :
     ListAdapter<Product, ProductsListAdapter.ViewHolder>(SampleDiffCallBack()) {
@@ -21,6 +22,7 @@ class ProductsListAdapter() :
         holder.bind(product)
 
         holder.itemView.setOnClickListener {
+            Products.currentProduct = product
             Navigation.findNavController(it).navigate(
                     R.id.action_productListFragment_to_productCardFragment,
                     bundleOf(Pair("id", product.id))

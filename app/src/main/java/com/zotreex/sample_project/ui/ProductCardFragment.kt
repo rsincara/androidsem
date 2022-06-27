@@ -47,6 +47,7 @@ class ProductCardFragment : Fragment(R.layout.activity_product_item) {
                 binding.title.text = product.title
                 binding.desc.text = product.description
                 binding.price.text = product.price.toString() + "$"
+                binding.categoryValue.text = product.category
                 Picasso.get().load(product.image).into(binding.cardImg)
             }
         }
